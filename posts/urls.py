@@ -8,4 +8,9 @@ urlpatterns = [
         view=login_required(views.PostFeedView.as_view()),
         name='feed'
     ),
+     path(
+        route='posts/new/',
+        view=views.CreatePostView.as_view(),
+        name='create_post'
+    ),
 ]
