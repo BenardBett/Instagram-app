@@ -15,3 +15,8 @@ class SignupView(FormView):
         """If the form is valid save the user"""
         form.save()
         return super().form_valid(form)
+    
+    class LoginView(auth_views.LoginView):
+    """Login view"""
+    template_name = 'users/login.html'
+    redirect_authenticated_user = True
