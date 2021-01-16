@@ -13,4 +13,9 @@ urlpatterns = [
         view=views.CreatePostView.as_view(),
         name='create_post'
     ),
+      path(
+        route='posts/<int:post_id>/',
+        view=login_required(views.PostDetailView.as_view()),
+        name='detail'
+    ),
 ]
