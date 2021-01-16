@@ -26,3 +26,7 @@ class Profile(models.model):
     #time
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        """Return username"""
+        return self.user.name
