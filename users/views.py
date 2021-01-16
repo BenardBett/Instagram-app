@@ -23,4 +23,16 @@ class LoginView(auth_views.LoginView):
     
 class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
     """Logout View."""
-    
+    class UpdateProfileView(LoginRequiredMixin, UpdateView):
+    """Update a user's profile view"""
+    template_name = 'users/update_profile.html'
+    model = Profile
+    fields = ['website', 'biography', 'phone_number', 'picture']
+    # Return success url
+    def get_object(self):
+        """Return user's profile"""
+        return self.request.user.profile
+    def get_success_url(self):
+        """Return to user's profile."""
+        username = self.object.user.username
+        return reverse('users:detail', kwargs={'username_slug': username})
