@@ -29,3 +29,11 @@ class SignupForm(forms.Form):
         if password != password_confirmation:
             raise forms.ValidationError('Passwords do not match.')
         return data
+     def save(self):
+        """Create user and profile"""
+        data = self.cleaned_data
+        data.pop('password_confirmation')
+
+        user = User.objects.create_user(**data)
+        profile = Profile(user=user)
+        profile.save()
