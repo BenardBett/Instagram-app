@@ -8,3 +8,4 @@ class SignupForm(forms.Form):
     password = forms.CharField(min_length=8,max_length=70, widget=forms.PasswordInput(attrs={'placeholder': 'Password','class': 'form-control'}))
     password_confirmation = forms.CharField( min_length=8, max_length=70, widget=forms.PasswordInput(attrs={'placeholder': 'Password Confirmation','class': 'form-control'}))
     first_name = forms.CharField(min_length=2, max_length=50,widget=forms.TextInput(attrs={'placeholder': 'First name','class': 'form-control'}))
+    last_name = forms.CharField(min_length=2,  max_length=50,widget=forms.TextInput(attrs={'placeholder': 'Last name','class': 'form-control'}))
