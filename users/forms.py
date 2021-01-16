@@ -19,3 +19,13 @@ class SignupForm(forms.Form):
         if username_taken:
             raise forms.ValidationError('Username is already in use.')
         return username
+     def clean(self):
+        """Verify password confirmation match."""
+        data = super().clean()
+
+        password = data['password']
+        password_confirmation = data['password_confirmation']
+
+        if password != password_confirmation:
+            raise forms.ValidationError('Passwords do not match.')
+        return data
