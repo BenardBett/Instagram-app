@@ -28,4 +28,13 @@ class PostFeedView(ListView):
     ordering = ('-created',)
     paginate_by = 4
     context_object_name = 'posts'
-
+    
+    
+    
+class PostDetailView(DetailView):
+    """Detail view posts"""
+    template_name = 'posts/detail.html'
+    slug_field = 'id'
+    slug_url_kwarg = 'post_id'
+    queryset = Post.objects.all()
+    context_object_name = 'post'
