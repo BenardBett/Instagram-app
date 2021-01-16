@@ -16,7 +16,11 @@ class SignupView(FormView):
         form.save()
         return super().form_valid(form)
     
-    class LoginView(auth_views.LoginView):
+class LoginView(auth_views.LoginView):
     """Login view"""
     template_name = 'users/login.html'
     redirect_authenticated_user = True
+    
+class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
+    """Logout View."""
+    
