@@ -10,3 +10,12 @@ class SignupForm(forms.Form):
     first_name = forms.CharField(min_length=2, max_length=50,widget=forms.TextInput(attrs={'placeholder': 'First name','class': 'form-control'}))
     last_name = forms.CharField(min_length=2,  max_length=50,widget=forms.TextInput(attrs={'placeholder': 'Last name','class': 'form-control'}))
     email = forms.CharField(min_length=7,max_length=70,widget=forms.EmailInput(attrs={'placeholder': 'Email','class': 'form-control'}))
+    
+    
+     def clean_username(self):
+        """Username must be unique"""
+        username = self.cleaned_data['username']
+        username_taken = User.objects.filter(username=username).exists()
+        if username_taken:
+            raise forms.ValidationError('Username is already in use.')
+        return username
