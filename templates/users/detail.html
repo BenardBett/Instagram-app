@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head_content %}
-<title>@{{ user.username }} | Platzigram</title>
+<title>@{{ user.username }} | Instagram</title>
 {% endblock %}
 
 {% block container %}
@@ -15,10 +15,8 @@
                 <h2 style="font-weight: 100;">
                     {{ user.username }}
                     {% if user == request.user %}
-                        <a
-                            href="{% url "users:update_profile" %}"
-                            class="ml-5 btn btn-sm btn-outline-info"
-                        >
+                        <a href="{% url "users:update_profile" %}"
+                            class="ml-5 btn btn-sm btn-outline-info" >
                             Edit profile
                         </a>
                     {% else %}
