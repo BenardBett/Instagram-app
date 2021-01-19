@@ -8,6 +8,8 @@ This is an instagram clone app. The user upon loging in can be able to upload im
 
 
 # Setup Installation
+<precode>
+<code>
 - Clone or download and unzip the repository from github https://github.com/BenardBett/Instagram-app.git
 
 - You can use this command (git clone https://github.com/BenardBett/Instagram-app.git) to clone the project to your machine if you have git.
@@ -16,9 +18,10 @@ This is an instagram clone app. The user upon loging in can be able to upload im
 
 - Install all the requirements using this command:
 
-pip install -r requirements.txt
+- pip install -r requirements.txt
 - Run python3 manage.py runserver to launch the app
-
+<code>
+<precode>
 # Technologies Used
 <precode>
 <code>
