@@ -22,6 +22,8 @@ This is an instagram clone app. The user upon loging in can be able to upload im
 - Run python3 manage.py runserver to launch the app
 <code>
 <precode>
+
+
 # Technologies Used
 <precode>
 <code>
@@ -35,6 +37,7 @@ This is an instagram clone app. The user upon loging in can be able to upload im
 - Git
 <code>
 <precode>
+
 
 # Bugs
 Can't search other users

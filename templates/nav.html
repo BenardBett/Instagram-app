@@ -7,6 +7,10 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="input-group mb-3">
+            {% csrf_token %}
+           <br> <input type="text" name="search" placeholder="search here .." class="form-control" aria-label="Username">
+        </div>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
 
